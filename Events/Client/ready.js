@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
-const {Database} = require('../../config.json');
 
 module.exports = {
     name: "ready",
     once: true,
 
    execute(DiscordBot) {
-       console.log('The client is now ready!')
        DiscordBot.user.setActivity('Recruitment', {type: "WATCHING"});
 
        if(!Database) return;
-       mongoose.connect(Database, {
+       mongoose.connect(process.env.Database, {
            useNewUrlParser: true,
            useUnifiedTopology: true
        }).then(() => {
