@@ -9,6 +9,7 @@ module.exports = {
 
        if(!process.env.Database) return;
        mongoose.connect(process.env.Database, {
+           keepAlive: true,
            useNewUrlParser: true,
            useUnifiedTopology: true
        }).then(() => {
