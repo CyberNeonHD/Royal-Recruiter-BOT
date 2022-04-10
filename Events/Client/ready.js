@@ -7,7 +7,7 @@ module.exports = {
    execute(DiscordBot) {
        DiscordBot.user.setActivity('Recruitment', {type: "WATCHING"});
 
-       if(!Database) return;
+       if(!process.env.Database) return;
        mongoose.connect(process.env.Database, {
            useNewUrlParser: true,
            useUnifiedTopology: true
