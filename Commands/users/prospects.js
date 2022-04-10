@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, CommandInteraction } = require('discord.js');
 const mongoose = require('mongoose');
 const { connection } = require('mongoose');
 const { execute } = require('../../Events/Client/ready');
@@ -10,16 +10,22 @@ module.exports = {
         {
             name: 'Prospect name',
             description: 'The name of the Prospect',
-            required: true
+            required: true,
+            type: 'STRING',
         }
     ],
 
+    /**
+     * 
+     * @param {MessageEmbed} interaction 
+     */
     async execute(interaction) {
+        const { options } = CommandInteraction;
         const Response = new MessageEmbed()
         .setColor('BLUE')
-        .setDescription('Saved the Prospect')
+        .setDescription(options.getString('Prospect name'))
 
-        interaction.reply({embeds: [Response]})
+        await interaction.reply({embeds: [Response]})
     }
 }
 
