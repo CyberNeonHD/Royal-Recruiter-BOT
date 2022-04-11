@@ -6,7 +6,6 @@ module.exports = {
      * 
      * @param {CommandInteraction} interaction 
      * @param {Client} DiscordBot 
-     * @returns 
      */
     async execute(interaction, DiscordBot) {
         if(interaction.isCommand()) {

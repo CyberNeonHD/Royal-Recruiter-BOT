@@ -24,7 +24,7 @@ module.exports = async (DiscordBot) => {
             DiscordBot.once(event.name, (...args) => event.execute(...args, DiscordBot));
         }
         else {
-            DiscordBot.once(event.name, (...args) => event.execute(...args, DiscordBot));
+            DiscordBot.on(event.name, (...args) => event.execute(...args, DiscordBot));
         };
         
         await Table.addRow(event.name, "✅ Succes")
