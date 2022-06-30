@@ -1,12 +1,13 @@
 const { CommandInteraction, MessageEmbed } = require("discord.js");
+require('../../Events/Client/ready');
 
 module.exports = {
-    name: "Give Prospect",
+    name: "GiveProspect",
     description: "Give prospect role",
     permission: "MANAGE_ROLES",
     options: [
         {
-            name: "new prospect",
+            name: "prospect",
             description: "Provide a user to manage.",
             type: "USER",
             required: true,

@@ -8,7 +8,7 @@ module.exports = {
     permission: "MANAGE_ROLES",
     options: [
         {
-            name: 'saveProspect',
+            name: 'name',
             description: 'The name of the Prospect (not ready)',
             type: 'STRING',
             required: true,
