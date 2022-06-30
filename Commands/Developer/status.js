@@ -7,38 +7,38 @@ module.exports = {
     description: 'Displays the status of the client and database connection',
 
     /**
-     * 
-     * @param {CommandInteraction} interaction 
-     * @param {Client} DiscordBot 
+     *
+     * @param {CommandInteraction} interaction
+     * @param {Client} DiscordBot
      */
     async execute(interaction, DiscordBot) {
-        const Response = new MessageEmbed()
-        let target = interaction.options.getMember("target") || interaction.member;
+        const Response = new MessageEmbed();
+        const target = interaction.options.getMember("target") || interaction.member;
         await target.user.fetch();
 
-        if(target.user.id !=`558245349458706433`){
-            Response.setColor('RED')
-            Response.setDescription('🚩 Unauthorized to check my status.')
+        if(target.user.id !==`558245349458706433`){
+            Response.setColor('RED');
+            Response.setDescription('🚩 Unauthorized to check my status.');
         }
         else {
-            Response.setColor('BLUE')
+            Response.setColor('BLUE');
             Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n
-            **Database**: \`${connectionSwitch(connection.readyState)}\``)
+            **Database**: \`${connectionSwitch(connection.readyState)}\``);
         }
-        interaction.reply({embeds: [Response]})
+        interaction.reply({embeds: [Response]});
     }
-}
+};
 
 function connectionSwitch(value) {
     let status = " ";
     switch(value) {
-        case 0: status = `🟥DISCONNECTED🟥`
+        case 0: status = `🟥DISCONNECTED🟥`;
         break;
-        case 1: status = `🟩CONNECTED🟩`
+        case 1: status = `🟩CONNECTED🟩`;
         break;
-        case 2: status = `🟨CONNECTING🟨`
+        case 2: status = `🟨CONNECTING🟨`;
         break;
-        case 3: status = `🟧DISCONNECTING🟧`
+        case 3: status = `🟧DISCONNECTING🟧`;
         break;
     }
     return status;

@@ -33,9 +33,9 @@ module.exports = {
             embed.setDescription(`I cannot edit the ${role} role!`)
             return interaction.reply({ embeds: [embed], ephemeral: true })
         }
-        
+
         embed.setDescription(target.roles.cache.has(role.id) ? `Removed the ${role} role from ${target}.` : `Added the ${role} role to ${target}.`);
         target.roles.cache.has(role.id) ? target.roles.remove(role) : target.roles.add(role);
         await interaction.reply({embeds: [embed], fetchReply: true});
     }
-}
+};
