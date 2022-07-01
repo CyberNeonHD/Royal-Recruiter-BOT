@@ -43,7 +43,7 @@ module.exports = async (DiscordBot) => {
     console.log(Table.toString());
     //checking perms//
     DiscordBot.on('ready', async () => {
-        const mainGuild = await DiscordBot.guilds.cache.get("949717261210505266");
+        const mainGuild = await DiscordBot.guilds.cache.get("458272992892420108");
         mainGuild.commands.set(CommandsArray);
     });
 };

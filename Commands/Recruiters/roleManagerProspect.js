@@ -18,7 +18,7 @@ module.exports = {
      */
     async execute(interaction) {
         const { options } = interaction;
-        const role        = interaction.guild.roles.cache.get("992212826238238771");
+        const role        = interaction.guild.roles.cache.get("706053335106715650");
         const target      = options.getMember("user");
         const embed       = new MessageEmbed()
                             .setColor(`#${interaction.guild.roles.cache.get(role.id).color.toString(16)}`)
@@ -37,20 +37,20 @@ module.exports = {
             target.roles.add(role);
             target.setNickname("P | " + nameOfTarget);
 
-            sendWelcomeMessageProspect(interaction, target);
-            embed.setDescription(`Prospect welcome message is posted.\nI also added the ${role} role to ${target}.`);
+            const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
+            sendWelcomeMessageProspect(channelProspects, interaction, target);
+            embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\nI also added the ${role} role to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
     }
 };
 
-function sendWelcomeMessageProspect(interaction, target) {
-    const channelProspects = interaction.guild.channels.cache.get("956199691282944042");
-    const expectationsChannel = interaction.guild.channels.cache.get('949717343934750800').toString();
-    const meetMentorChannel = interaction.guild.channels.cache.get('949717343934750800').toString();
-    const meetProspectChannel = interaction.guild.channels.cache.get('949717343934750800').toString();
-    const goingAwayChannel = interaction.guild.channels.cache.get('949717343934750800').toString();
-    const processFeedbackChannel = interaction.guild.channels.cache.get('949717343934750800').toString();
+function sendWelcomeMessageProspect(channelProspects, interaction, target) {
+    const expectationsChannel = interaction.guild.channels.cache.get('988757844700569640').toString();
+    const meetMentorChannel = interaction.guild.channels.cache.get('988757957443465266').toString();
+    const meetProspectChannel = interaction.guild.channels.cache.get('988757737850667028').toString();
+    const goingAwayChannel = interaction.guild.channels.cache.get('988757678874587186').toString();
+    const processFeedbackChannel = interaction.guild.channels.cache.get('988757893119631380').toString();
 
     channelProspects.send(
 `@here
