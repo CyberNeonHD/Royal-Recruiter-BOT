@@ -19,7 +19,7 @@ module.exports = {
     async execute(interaction) {
         const { options } = interaction;
         const role        = interaction.guild.roles.cache.get("992212826238238771");
-        const target      = options.getMember("target") || interaction.member;
+        const target      = options.getMember("user");
         const embed       = new MessageEmbed()
                             .setColor(`#${interaction.guild.roles.cache.get(role.id).color.toString(16)}`)
                             .setTitle("Prospect manager");
@@ -34,6 +34,8 @@ module.exports = {
         }
         else {
             target.roles.add(role);
+            const nameOfTarget = target.displayName;
+            target.setNickname("P | " + nameOfTarget);
             embed.setDescription(`Added the ${role} role to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
