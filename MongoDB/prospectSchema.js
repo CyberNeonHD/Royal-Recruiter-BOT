@@ -5,10 +5,14 @@ const propsectSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    remainingTime: {
+    steam64id: {
+        type: String,
+        required: true
+    },
+    enrollment: {
         type: String,
         required: true
     }
-})
+});
 
 module.exports = mongoose.model('Prospect', propsectSchema);
