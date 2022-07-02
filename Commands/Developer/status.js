@@ -25,7 +25,9 @@ module.exports = {
             Response.setColor('BLUE');
             Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n
             **Database**: \`${connectionSwitch(connection.readyState)}\n`);
-            Response.setFooter(`Current Version: ${versionBot}`);
+            Response.setFooter({
+                text: `Current Version: ${versionBot}`
+                });
         }
         else {
             Response.setColor('RED');
