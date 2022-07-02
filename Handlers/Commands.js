@@ -44,6 +44,9 @@ module.exports = async (DiscordBot) => {
     //checking perms//
     DiscordBot.on('ready', async () => {
         const mainGuild = await DiscordBot.guilds.cache.get("458272992892420108");
+        const SecondGuild = await DiscordBot.guilds.cache.get("949717261210505266");
         mainGuild.commands.set(CommandsArray);
+        SecondGuild.commands.set(CommandsArray);
     });
+
 };

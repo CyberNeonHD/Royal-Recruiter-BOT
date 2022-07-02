@@ -1,5 +1,7 @@
 const { Client, Collection } = require('discord.js');
+const Discord = require('discord.js');
 const DiscordBot = new Client({intents:46859});
+
 
 DiscordBot.commands = new Collection();
 

@@ -6,7 +6,7 @@ const PG = promisify(glob);
 const Ascii = require('ascii-table');
 
 /**
- * @param {Client} DiscordBot 
+ * @param {Client} DiscordBot
  */
 module.exports = async (DiscordBot) => {
     const Table = new Ascii('Event Loaded');
@@ -25,11 +25,11 @@ module.exports = async (DiscordBot) => {
         }
         else {
             DiscordBot.on(event.name, (...args) => event.execute(...args, DiscordBot));
-        };
-        
+        }
+
         await Table.addRow(event.name, "✅ Succes")
     });
 
     console.log(Table.toString());
 
-}
+};
