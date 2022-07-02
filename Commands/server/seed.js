@@ -12,7 +12,7 @@ module.exports = {
 
         const Response = new MessageEmbed();
         Response.setColor('GREEN');
-        Response.setDescription('READY FOR SEEDING.');
+        Response.setDescription('READY FOR SEEDING!');
         interaction.reply({embeds: [Response], ephemeral: true });
     }
 

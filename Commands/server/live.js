@@ -12,7 +12,7 @@ module.exports = {
 
         const Response = new MessageEmbed();
         Response.setColor('GREEN');
-        Response.setDescription('WE ARE LIVE');
+        Response.setDescription('WE ARE LIVE :D');
         interaction.reply({embeds: [Response], ephemeral: true });
     }
 
