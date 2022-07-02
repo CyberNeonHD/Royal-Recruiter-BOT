@@ -13,17 +13,21 @@ module.exports = {
      */
     async execute(interaction, DiscordBot) {
         const Response = new MessageEmbed();
-        const target = interaction.options.getMember("target") || interaction.member;
-        await target.user.fetch();
 
-        if(target.user.id !==`558245349458706433`){
-            Response.setColor('RED');
-            Response.setDescription('🚩 Unauthorized to check my status.');
-        }
-        else {
+        const recruitmentOfficerRole = interaction.guild.roles.cache.get("986374067038847008");
+        const eventsOfficerRole = interaction.guild.roles.cache.get("803396496853958677");
+        const adminOfficerRole = interaction.guild.roles.cache.get("810252560220946432");
+        const communityOfficerRole = interaction.guild.roles.cache.get("989894740642263082");
+        const clanLeaders = interaction.guild.roles.cache.get("458273481205874690");
+        const founder = interaction.guild.roles.cache.get("726160366593376266");
+        if(interaction.member.roles.cache.has(recruitmentOfficerRole.id) || interaction.member.roles.cache.has(adminOfficerRole.id) || interaction.member.roles.cache.has(eventsOfficerRole.id) || interaction.member.roles.cache.has(communityOfficerRole) || interaction.member.roles.cache.has(clanLeaders.id) || interaction.member.roles.cache.has(founder.id)){
             Response.setColor('BLUE');
             Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n
             **Database**: \`${connectionSwitch(connection.readyState)}\``);
+        }
+        else {
+            Response.setColor('RED');
+            Response.setDescription('🚩 Unauthorized to check my status.');
         }
         interaction.reply({embeds: [Response]});
     }
