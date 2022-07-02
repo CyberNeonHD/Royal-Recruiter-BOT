@@ -3,7 +3,7 @@ const Prospect = require('../../MongoDB/prospectSchema');
 require('../../Events/Client/ready');
 
 module.exports = {
-    name: 'save',
+    name: 'saveprospect',
     description: 'Save a new prospect here (not ready)',
     permission: "MANAGE_ROLES",
     options: [
