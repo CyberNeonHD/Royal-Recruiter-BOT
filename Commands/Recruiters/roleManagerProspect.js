@@ -38,8 +38,11 @@ module.exports = {
             target.setNickname("P | " + nameOfTarget);
 
             const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
+            const channelMentor = interaction.guild.channels.cache.get("988745961209737287");
+            sendMentorNewProspectMessage(channelMentor, interaction, target);
             sendWelcomeMessageProspect(channelProspects, interaction, target);
-            embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\nI also added the ${role} role to ${target}.`);
+            createProspectThread(interaction, nameOfTarget);
+            embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\nGave ${nameOfTarget} prospect tag.\nAdded the ${role} role to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
     }
@@ -62,4 +65,22 @@ Let us know if you need to be put on hold or will be less active in ${goingAwayC
 If you're feeling nice, shoot us a message in ${processFeedbackChannel}. We want to know how your experience is with us 🙂.
 `);
 
+}
+
+function sendMentorNewProspectMessage(channelMentor, interaction, target) {
+    const roleMentor = interaction.guild.roles.cache.get("988745375575863326");
+    channelMentor.send(`${roleMentor}, we have ${target} that needs a new mentor.`);
+}
+
+async function createProspectThread(interaction, nameOfTarget){
+    const ts = Date.now();
+    const date_ob = new Date(ts);
+    const date = date_ob.getDate() + 14;
+    const month = date_ob.getMonth() + 1;
+
+    await interaction.channel.threads.create({
+        name: `${date}-${month} ${nameOfTarget}`,
+        autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
+        reason: 'New prospect thread',
+    });
 }

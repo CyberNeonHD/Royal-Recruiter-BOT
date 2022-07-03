@@ -41,7 +41,8 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
-            embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} role added to ${target}.\n${oldRole} role removed from ${target}.`);
+            embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.
+            \n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
     }
@@ -60,7 +61,7 @@ Check out ${codeOfConductChannel} to know what we expect of you.
 Fill out ${meetMembersChannel}, so we can get to know a little about you.
 Let us know you are going away in ${goingAwayChannel}.
 
-Welcome to the family!
+❤️ Welcome to the family! ❤️
 `);
 
 }

@@ -11,7 +11,9 @@ DiscordBot.login(process.env.DSJ_Token);
 const seed = require('./MongoDB/seedSchema');
 const live = require('./MongoDB/liveSchema');
 DiscordBot.on('messageCreate', async (messageCreate) => {
-    if(!messageCreate.content.startsWith(PREFIX)|| messageCreate.author.bot) return;
+    if(!messageCreate.content.startsWith(PREFIX)|| messageCreate.author.bot) {
+        return;
+    }
     const arg = messageCreate.content.slice(PREFIX.length).split(/ +/);
     const command= arg.shift().toLowerCase();
     if (command === 'seed'){
