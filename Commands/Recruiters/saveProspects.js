@@ -27,36 +27,26 @@ module.exports = {
      * @param {CommandInteraction} interaction
      */
     async execute(interaction) {
-        const Response = new MessageEmbed()
-        .setColor('BLUE')
-        .setTitle('NOT WORKING')
-        .setDescription(`**Work in progress**`)
-        .setThumbnail('https://i.imgur.com/0zHd6L9.png')
-        .setTimestamp();
-
-        interaction.reply({embeds: [Response], fetchReply: true});
-        /*
         const { options } = interaction;
         const nameProspect = options.getString('name');
         const steam64id = options.getString('steam64id');
+        const today = new Date();
+        const date = today.getDate()+'-'+(today.getMonth()+1)+'-'+ today.getFullYear();
 
         const Response = new MessageEmbed()
         .setColor('BLUE')
         .setTitle('Saved to the database')
-        .setDescription(`**Prospect saved**: ${nameProspect}\n**steam64id saved**:${steam64id}`)
+        .setDescription(`**Prospect saved**: ${nameProspect}\n**steam64id saved**: ${steam64id}\n**Enrollment**: ${date}`)
         .setThumbnail('https://i.imgur.com/0zHd6L9.png')
-        .setTimestamp()
+        .setTimestamp();
 
         interaction.reply({embeds: [Response], fetchReply: true});
 
-        const today = new Date();
-        const date = today.getDate()+'-'+(today.getMonth()+1)+'-'+ today.getFullYear();
         await Prospect.create({
             name: nameProspect,
-            steam64id:steam64id,
+            steam64id: steam64id,
             enrollment: date
         });
-        */
     }
 };
 

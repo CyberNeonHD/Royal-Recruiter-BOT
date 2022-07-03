@@ -52,7 +52,7 @@ function sendWelcomeMessageProspect(channelProspects, interaction, target) {
     const codeOfConductChannel = interaction.guild.channels.cache.get('465089280629276672').toString();
     const meetMembersChannel = interaction.guild.channels.cache.get('458279712213565440').toString();
     const goingAwayChannel = interaction.guild.channels.cache.get('484262435994468363').toString();
-
+    const feedbackChannel = interaction.guild.channels.cache.get('988757893119631380').toString();
     channelProspects.send(
 `@here.
 Please join us in welcoming our newest member ${target}
@@ -60,6 +60,7 @@ Please join us in welcoming our newest member ${target}
 Check out ${codeOfConductChannel} to know what we expect of you.
 Fill out ${meetMembersChannel}, so we can get to know a little about you.
 Let us know you are going away in ${goingAwayChannel}.
+Also don't forget to give us feedback about your process in ${feedbackChannel}.
 
 ❤️ Welcome to the family! ❤️
 `);
