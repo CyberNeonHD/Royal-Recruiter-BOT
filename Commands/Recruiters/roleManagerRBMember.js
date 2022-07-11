@@ -62,7 +62,7 @@ Fill out ${meetMembersChannel}, so we can get to know a little about you.
 Let us know you are going away in ${goingAwayChannel}.
 Also don't forget to give us feedback about your process in ${feedbackChannel}.
 
-❤️ Welcome to the family! ❤️
+❤️ Welcome to the family ${target}! ❤️
 `);
 
 }

@@ -18,23 +18,29 @@ module.exports = {
      */
     async execute(interaction) {
         const { options } = interaction;
-        const role        = interaction.guild.roles.cache.get("706053335106715650");
+        const roleProspect = interaction.guild.roles.cache.get("706053335106715650");
+        const roleSeeders = interaction.guild.roles.cache.get("505401465804685312");
         const target      = options.getMember("user");
         const embed       = new MessageEmbed()
                             .setColor(`#${interaction.guild.roles.cache.get(role.id).color.toString(16)}`)
                             .setTitle("Prospect manager");
 
-        if (!role.editable || role.position === 0) {
+        if ((!roleProspect.editable || roleProspect.position === 0) && (!roleSeeders.editable || roleSeeders.position === 0)){
             embed.setDescription(`I cannot edit the ${role} role!`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
-        if (target.roles.cache.has(role.id)){
-            embed.setDescription("User has that role already??");
+        if (!target.roles.cache.has(roleSeeders.id)){
+            target.roles.add(roleSeeders);
+        }
+
+        if ((target.roles.cache.has(roleProspect.id))){
+            embed.setDescription("User has the prospect role already??");
+            return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         else {
             const nameOfTarget = target.displayName;
-            target.roles.add(role);
+            target.roles.add(roleProspect);
             target.setNickname("P | " + nameOfTarget);
 
             const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
@@ -54,15 +60,17 @@ function sendWelcomeMessageProspect(channelProspects, interaction, target) {
     const meetProspectChannel = interaction.guild.channels.cache.get('988757737850667028').toString();
     const goingAwayChannel = interaction.guild.channels.cache.get('988757678874587186').toString();
     const processFeedbackChannel = interaction.guild.channels.cache.get('988757893119631380').toString();
+    const learnChannel = interaction.guild.channels.cache.get('723626350841298975').toString();
 
     channelProspects.send(
 `@here
-Welcome ${target}
-When you have time. Check out ${expectationsChannel}.
+Please all welcome ${target}!
+${target}, when you have time, check out ${expectationsChannel}.
 Get to know your mentor and see your fellow teammates in ${meetMentorChannel}.
 Give us a little info on yourself in ${meetProspectChannel} (whatever you are comfortable with sharing).
 Let us know if you need to be put on hold or will be less active in ${goingAwayChannel}.
 If you're feeling nice, shoot us a message in ${processFeedbackChannel}. We want to know how your experience is with us 🙂.
+Btw do you want to upper your Squad plays? If so check out ${learnChannel}.
 `);
 
 }
