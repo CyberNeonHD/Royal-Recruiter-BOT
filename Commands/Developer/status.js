@@ -1,7 +1,7 @@
 const { Client, MessageEmbed, CommandInteraction } = require('discord.js');
 const { connection } = require('mongoose');
 require('../../Events/Client/ready');
-const versionBot = "V0.8";
+const versionBot = "V0.9";
 
 module.exports = {
     name: 'status',
