@@ -41,7 +41,10 @@ module.exports = {
         else {
             const nameOfTarget = target.displayName;
             target.roles.add(roleProspect);
-            target.setNickname("P | " + nameOfTarget);
+
+            if(nameOfTarget.substring(0, 3) !== "P | "){
+                target.setNickname("P | " + nameOfTarget);
+            }
 
             const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
             const channelMentor = interaction.guild.channels.cache.get("988745961209737287");
