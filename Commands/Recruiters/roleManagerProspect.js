@@ -22,7 +22,7 @@ module.exports = {
         const roleSeeders = interaction.guild.roles.cache.get("505401465804685312");
         const target      = options.getMember("user");
         const embed       = new MessageEmbed()
-                            .setColor(`#${interaction.guild.roles.cache.get(role.id).color.toString(16)}`)
+                            .setColor(`#${interaction.guild.roles.cache.get(roleProspect.id).color.toString(16)}`)
                             .setTitle("Prospect manager");
 
         if ((!roleProspect.editable || roleProspect.position === 0) && (!roleSeeders.editable || roleSeeders.position === 0)){
@@ -40,18 +40,22 @@ module.exports = {
         }
         else {
             const nameOfTarget = target.displayName;
+            const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
+            const channelMentor = interaction.guild.channels.cache.get("988745961209737287");
             target.roles.add(roleProspect);
 
-            if(nameOfTarget.substring(0, 3) !== "P | "){
+            if(nameOfTarget.substring(0, 5) === "RB | "){
+                embed.setDescription("This person has RB tags??");
+                return interaction.reply({ embeds: [embed]});
+            }
+            else if(nameOfTarget.substring(0, 4) !== "P | "){
                 target.setNickname("P | " + nameOfTarget);
             }
 
-            const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
-            const channelMentor = interaction.guild.channels.cache.get("988745961209737287");
             //sendMentorNewProspectMessage(channelMentor, interaction, target);
             //sendWelcomeMessageProspect(channelProspects, interaction, target);
             //createProspectThread(interaction, nameOfTarget);
-            embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\nGave ${nameOfTarget} prospect tag.\nAdded the ${role} role to ${target}.`);
+            embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\n${nameOfTarget} has the P tag.\nAdded the necessary roles to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
     }
