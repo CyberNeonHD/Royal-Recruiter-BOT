@@ -41,8 +41,7 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
-            embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.
-            \n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
+            embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.\n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
     }

@@ -48,9 +48,9 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("738327561062449174");
             const channelMentor = interaction.guild.channels.cache.get("988745961209737287");
-            sendMentorNewProspectMessage(channelMentor, interaction, target);
-            sendWelcomeMessageProspect(channelProspects, interaction, target);
-            createProspectThread(interaction, nameOfTarget);
+            //sendMentorNewProspectMessage(channelMentor, interaction, target);
+            //sendWelcomeMessageProspect(channelProspects, interaction, target);
+            //createProspectThread(interaction, nameOfTarget);
             embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\nGave ${nameOfTarget} prospect tag.\nAdded the ${role} role to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
