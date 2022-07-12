@@ -52,9 +52,9 @@ module.exports = {
                 target.setNickname("P | " + nameOfTarget);
             }
 
-            //sendMentorNewProspectMessage(channelMentor, interaction, target);
-            //sendWelcomeMessageProspect(channelProspects, interaction, target);
-            //createProspectThread(interaction, nameOfTarget);
+            sendMentorNewProspectMessage(channelMentor, interaction, target);
+            sendWelcomeMessageProspect(channelProspects, interaction, target);
+            createProspectThread(interaction, nameOfTarget);
             embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\n${nameOfTarget} has the P tag.\nAdded the necessary roles to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
