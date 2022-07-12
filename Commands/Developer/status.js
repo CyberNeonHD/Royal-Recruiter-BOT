@@ -23,7 +23,7 @@ module.exports = {
         const founder = interaction.guild.roles.cache.get("726160366593376266");
         if(interaction.member.roles.cache.has(recruitmentOfficerRole.id) || interaction.member.roles.cache.has(adminOfficerRole.id) || interaction.member.roles.cache.has(eventsOfficerRole.id) || interaction.member.roles.cache.has(communityOfficerRole) || interaction.member.roles.cache.has(clanLeaders.id) || interaction.member.roles.cache.has(founder.id)){
             Response.setColor('BLUE');
-            Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n**Database**: \`${connectionSwitch(connection.readyState)}\``);
+            Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n\n**Database**: \`${connectionSwitch(connection.readyState)}\``);
             Response.setFooter({
                 text: `Current Version: ${versionBot}`
             });
