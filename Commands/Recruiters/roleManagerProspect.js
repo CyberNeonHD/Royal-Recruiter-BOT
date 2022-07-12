@@ -55,6 +55,7 @@ module.exports = {
             sendMentorNewProspectMessage(channelMentor, interaction, target);
             sendWelcomeMessageProspect(channelProspects, interaction, target);
             createProspectThread(interaction, nameOfTarget);
+            syncChannelPermissions(interaction);
             embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\n${nameOfTarget} has the P tag.\nAdded the necessary roles to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
@@ -98,4 +99,8 @@ async function createProspectThread(interaction, nameOfTarget){
         autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
         reason: 'New prospect thread',
     });
+}
+
+function syncChannelPermissions(interaction) {
+    interaction.channel.lockPermissions();
 }
