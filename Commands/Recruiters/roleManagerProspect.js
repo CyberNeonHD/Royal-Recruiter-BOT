@@ -26,7 +26,7 @@ module.exports = {
                             .setTitle("Prospect manager");
 
         if ((!roleProspect.editable || roleProspect.position === 0) && (!roleSeeders.editable || roleSeeders.position === 0)){
-            embed.setDescription(`I cannot edit the ${role} role!`);
+            embed.setDescription(`I'm lacking perms to do this command!`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
