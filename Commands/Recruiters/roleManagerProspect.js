@@ -56,6 +56,7 @@ module.exports = {
             sendWelcomeMessageProspect(channelProspects, interaction, target);
             createProspectThread(interaction, nameOfTarget);
             syncChannelPermissions(interaction);
+            //all on one line, otherwise spacing issues. Not sure why Discord has this issue.
             embed.setDescription(`Prospect welcome message is posted in ${channelProspects}.\n${nameOfTarget} has the P tag.\nAdded the necessary roles to ${target}.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
@@ -69,7 +70,8 @@ function sendWelcomeMessageProspect(channelProspects, interaction, target) {
     const goingAwayChannel = interaction.guild.channels.cache.get('988757678874587186').toString();
     const processFeedbackChannel = interaction.guild.channels.cache.get('988757893119631380').toString();
     const learnChannel = interaction.guild.channels.cache.get('723626350841298975').toString();
-
+    
+//for some reason it needs to be towards the whole left, otherwise I have spacing issues?
     channelProspects.send(
 `@here
 Please all welcome ${target}!
