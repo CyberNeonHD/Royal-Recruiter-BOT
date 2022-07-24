@@ -21,6 +21,7 @@ module.exports = {
         const communityOfficerRole = interaction.guild.roles.cache.get("989894740642263082");
         const clanLeaders = interaction.guild.roles.cache.get("458273481205874690");
         const founder = interaction.guild.roles.cache.get("726160366593376266");
+        //TODO This IF statement really needs rework lol
         if(interaction.member.roles.cache.has(recruitmentOfficerRole.id) || interaction.member.roles.cache.has(adminOfficerRole.id) || interaction.member.roles.cache.has(eventsOfficerRole.id) || interaction.member.roles.cache.has(communityOfficerRole) || interaction.member.roles.cache.has(clanLeaders.id) || interaction.member.roles.cache.has(founder.id)){
             Response.setColor('BLUE');
             Response.setDescription(`**CLIENT**:\`🟩ONLINE🟩\` - \`${DiscordBot.ws.ping}ms\`\n **Uptime**: <t:${parseInt(DiscordBot.readyTimestamp/1000)}:R>\n\n**Database**: \`${connectionSwitch(connection.readyState)}\``);
