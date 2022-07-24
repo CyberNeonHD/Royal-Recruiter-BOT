@@ -41,6 +41,7 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
+            //again all on 1 line due to spacing issues when message is posted in Discord.
             embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.\n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
         await interaction.reply({embeds: [embed], fetchReply: true});
@@ -52,6 +53,7 @@ function sendWelcomeMessageProspect(channelProspects, interaction, target) {
     const meetMembersChannel = interaction.guild.channels.cache.get('458279712213565440').toString();
     const goingAwayChannel = interaction.guild.channels.cache.get('484262435994468363').toString();
     const feedbackChannel = interaction.guild.channels.cache.get('988757893119631380').toString();
+    //again all left due to spacing issues when message is posted in Discord.
     channelProspects.send(
 `@here.
 Please join us in welcoming our newest member ${target}
