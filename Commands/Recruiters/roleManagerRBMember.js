@@ -62,6 +62,8 @@ Check out ${codeOfConductChannel} to know what we expect of you.
 Fill out ${meetMembersChannel}, so we can get to know a little about you.
 Let us know you are going away in ${goingAwayChannel}.
 Also don't forget to give us feedback about your process in ${feedbackChannel}.
+You can now also view and vote on prospect tickets. 
+Please make sure to vote by clicking the reactions, and leave a message in the thread.
 
 ❤️ Welcome to the family ${target}! ❤️
 `);
