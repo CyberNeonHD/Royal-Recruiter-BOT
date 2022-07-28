@@ -87,7 +87,81 @@ Btw do you want to upper your Squad plays? If so check out ${learnChannel}.
 
 function sendMentorNewProspectMessage(channelMentor, interaction, target) {
     const roleMentor = interaction.guild.roles.cache.get("988745375575863326");
+<<<<<<< HEAD
     channelMentor.send(`${roleMentor}, we have ${target} that needs a new mentor.`);
+=======
+    const teamAhmed = interaction.guild.roles.cache.get("988742885568548914");
+    const teamAtem = interaction.guild.roles.cache.get("991120083726368849");
+    const teamBlame = interaction.guild.roles.cache.get("991120575814696970");
+    const teamBuck = interaction.guild.roles.cache.get("991119543873310791");
+    const teamCyber = interaction.guild.roles.cache.get("988743418345828382");
+    const teamFloop = interaction.guild.roles.cache.get("991120425285337198");
+    const teamMatt = interaction.guild.roles.cache.get("988743108797800468");
+    const teamMiau = interaction.guild.roles.cache.get("991314621107535923");
+    const teamRosie = interaction.guild.roles.cache.get("986281624733896715");
+    const teamSog = interaction.guild.roles.cache.get("991120227649732708");
+
+    channelMentor.send(`${roleMentor}, we have ${target} that needs a new mentor.`).then(message => {
+        message.react("<:teamahmed:993294138231492608>")
+        message.react("<:teamatem:993288379288526878>")
+        message.react("<:teamblame::993288443453001849>")
+        message.react("<:teambuck:993294321665183854>")
+        message.react("<:teamcyber:993294235300274186>")
+        message.react("<:teamfloop:993288237550415932>")
+        message.react("<:teammatt:993294083541966868>")
+        message.react("<:teammiau:993288158416490496>")
+        message.react("<:teamrosie:993288056163532930>")
+        message.react("<:teamsog:993288308765491260>")
+        message.awaitReactions((user) => user.id == message.author.id,
+        { max: 1, time: 900000 }).then(collected => {
+            switch(collected.first().emoji.name){
+                case "<:teamahmed:993294138231492608>":{
+                    target.roles.add(teamAhmed);
+                    break;
+                }
+                case "<:teamatem:993288379288526878>":{
+                    target.roles.add(teamAtem);
+                    break;
+                }
+                case "<:teamblame::993288443453001849>":{
+                    target.roles.add(teamBlame);
+                    break;
+                }
+                case "<:teambuck:993294321665183854>":{
+                    target.roles.add(teamBuck);
+                    break;
+                }
+                case "<:teamcyber:993294235300274186>":{
+                    target.roles.add(teamCyber);
+                    break;
+                }
+                case "<:teamfloop:993288237550415932>":{
+                    target.roles.add(teamFloop);
+                    break;
+                }
+                case "<:teammatt:993294083541966868>":{
+                    target.roles.add(teamMatt);
+                    break;
+                }
+                case "<:teammiau:993288158416490496>":{
+                    target.roles.add(teamMiau);
+                    break;
+                }
+                case "<:teamrosie:993288056163532930>":{
+                    target.roles.add(teamRosie);
+                    break;
+                }
+                case "<:teamsog:993288308765491260>":{
+                    target.roles.add(teamSog);
+                    break;
+                }
+            }
+        }).catch(() => {
+            message.reply('No reaction after 15 minutes, operation canceled');
+        });
+    
+    })
+>>>>>>> parent of 4f05519 (potential fix for react assigning)
 }
 
 async function createProspectThread(interaction, nameOfTarget){
