@@ -98,20 +98,20 @@ function sendMentorNewProspectMessage(channelMentor, interaction, target) {
     const teamRosie = interaction.guild.roles.cache.get("986281624733896715");
     const teamSog = interaction.guild.roles.cache.get("991120227649732708");
 
-    channelMentor.send(`${roleMentor}, we have ${target} that needs a new mentor.`).then(message => {
-        message.react("<:teamahmed:993294138231492608>")
-        message.react("<:teamatem:993288379288526878>")
-        message.react("<:teamblame::993288443453001849>")
-        message.react("<:teambuck:993294321665183854>")
-        message.react("<:teamcyber:993294235300274186>")
-        message.react("<:teamfloop:993288237550415932>")
-        message.react("<:teammatt:993294083541966868>")
-        message.react("<:teammiau:993288158416490496>")
-        message.react("<:teamrosie:993288056163532930>")
-        message.react("<:teamsog:993288308765491260>")
-        message.awaitReactions((user) => user.id == message.author.id,
+    channelMentor.send(`${roleMentor}, we have ${target} that needs a new mentor.`).then(async function (message) {
+        await message.react("<:teamahmed:993294138231492608>")
+        await message.react("<:teamatem:993288379288526878>")
+        await message.react("<:teamblame::993288443453001849>")
+        await message.react("<:teambuck:993294321665183854>")
+        await message.react("<:teamcyber:993294235300274186>")
+        await message.react("<:teamfloop:993288237550415932>")
+        await message.react("<:teammatt:993294083541966868>")
+        await message.react("<:teammiau:993288158416490496>")
+        await message.react("<:teamrosie:993288056163532930>")
+        await message.react("<:teamsog:993288308765491260>")
+        await message.awaitReactions((user) => user.id == message.author.id,
         { max: 1, time: 900000 }).then(collected => {
-            switch(collected.first().emoji.name){
+            switch(console.log(collected.first().emoji.name)){
                 case "<:teamahmed:993294138231492608>":{
                     target.roles.add(teamAhmed);
                     break;
