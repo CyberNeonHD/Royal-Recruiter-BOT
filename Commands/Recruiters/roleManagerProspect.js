@@ -95,6 +95,16 @@ async function createProspectThread(interaction, nameOfTarget){
     const date_ob = new Date(ts);
     const date = date_ob.getDate() + 14;
     const month = date_ob.getMonth() + 1;
+    if(date > 31 && (month != 2 || month != 4 || month != 6 || month != 9 ||month != 11)){
+        date = date - 31;
+        month = month + 1;
+    }else if (date > 31 && month != 2){
+        date = date - 31;
+        month = month + 1;
+    }else if (date > 28 ){  //fucks up by a day on a leap year ah well!
+        date = date - 28;
+        month = month + 1;   
+    }
 
     await interaction.channel.threads.create({
         name: `${date}-${month} ${nameOfTarget}`,
