@@ -111,6 +111,8 @@ async function createProspectThread(interaction, nameOfTarget){
         autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
         reason: 'New prospect thread',
     });
+    
+    interaction.channel.setName(`${nameOfTarget}_${date}-${month}`)
 }
 
 function syncChannelPermissions(interaction) {
