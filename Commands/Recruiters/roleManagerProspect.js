@@ -93,8 +93,8 @@ function sendMentorNewProspectMessage(channelMentor, interaction, target) {
 async function createProspectThread(interaction, nameOfTarget){
     const ts = Date.now();
     const date_ob = new Date(ts);
-    const date = date_ob.getDate() + 14;
-    const month = date_ob.getMonth() + 1;
+    date = date_ob.getDate() + 14;
+    month = date_ob.getMonth() + 1;
     if(date > 31 && (month != 2 || month != 4 || month != 6 || month != 9 ||month != 11)){
         date = date - 31;
         month = month + 1;
