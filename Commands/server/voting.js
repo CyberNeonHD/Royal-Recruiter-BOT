@@ -11,7 +11,7 @@ module.exports = {
     async execute(interaction) {
         const roleRB = interaction.guild.roles.cache.get("528574587747958794");
         const roleCadet = interaction.guild.roles.cache.get("976384794923503657");
-        const roleAdminOf = interaction.guild.roles.cache.get("1010937393815228567");
+        const roleAdminOf = interaction.guild.roles.cache.get("810252560220946432");
 
         const Response = new MessageEmbed();
         Response.setColor('BLUE');
@@ -22,7 +22,7 @@ module.exports = {
         message.react('❔');
 
         interaction.channel.send(`${roleRB} and ${roleCadet}, please vote on the prospect :)`);
-        interaction.channel.send(`${roleAdminOf} Please add WL to this player! xoxo`);
+        interaction.channel.send(`${roleAdminOf}, Please add WL to this player! xoxo`);
     }
 };
 
