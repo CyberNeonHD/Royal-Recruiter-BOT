@@ -101,7 +101,7 @@ async function createProspectThread(interaction, nameOfTarget){
     }else if (date > 31 && month != 2){
         date = date - 31;
         month = month + 1;
-    }else if (date > 28 ){  //fucks up by a day on a leap year ah well!
+    }else if (date > 28 && month == 2){  //fucks up by a day on a leap year ah well!
         date = date - 28;
         month = month + 1;   
     }
@@ -112,7 +112,7 @@ async function createProspectThread(interaction, nameOfTarget){
         reason: 'New prospect thread',
     });
     
-    interaction.channel.setName(`${nameOfTarget}_${date}-${month}`)
+    interaction.channel.setName(`${nameOfTarget}_${date}-${month}`);
 }
 
 function syncChannelPermissions(interaction) {
