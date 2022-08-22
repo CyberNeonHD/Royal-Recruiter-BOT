@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@leventhan/battlemetrics": "^1.5.7",
     "ascii-table": "^0.0.9",
     "discord.js": "^13.8.1",
     "glob": "^7.2.0",
