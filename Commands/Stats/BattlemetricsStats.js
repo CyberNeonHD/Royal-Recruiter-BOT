@@ -37,7 +37,7 @@ module.exports = {
         const Response = new MessageEmbed();
         Response.setColor('GREEN');
         Response.setDescription(`${awaitExample}`);
-        await interaction.reply({embeds: [Response], fetchReply: true });
+        interaction.reply({embeds: [Response], fetchReply: true });
         interaction.channel.send(`Player info by steam id`);
     }
 };
