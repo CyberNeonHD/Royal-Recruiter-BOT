@@ -30,21 +30,15 @@ module.exports = {
         const { options } = interaction;
         const steam64id = options.getString('steam64id');
 
-        tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
-            const message = "Get players info by searching on identifier.";
-            console.log("=".repeat(message.length));
-            interaction.reply(message);
-            console.log("=".repeat(message.length));
-            interaction.reply(toString.res);
-        }).catch(err => {
-            console.log(err);
-        });
+        const awaitExample = await tBM.getPlayerInfoBy(
+            "steamID", `${steam64id}`
+        );
 
 
         const Response = new MessageEmbed()
         .setColor('BLUE')
         .setTitle('testing')
-        .setDescription(`**steam64id saved**: ${res}\n`)
+        .setDescription(`**steam64id saved**: ${awaitExample}\n`)
 
 
         interaction.reply({embeds: [Response], fetchReply: true});
