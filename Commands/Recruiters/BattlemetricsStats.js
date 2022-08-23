@@ -37,7 +37,7 @@ module.exports = {
             interaction.reply("=".repeat(message.length));
             interaction.reply(`${message}`);
             interaction.reply("=".repeat(message.length));
-            interaction.reply(`${value}`);
+            interaction.reply(`${res}`);
         }).catch(err => {
             interaction.reply(err);
         });
