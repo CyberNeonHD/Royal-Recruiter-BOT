@@ -33,10 +33,15 @@ module.exports = {
         const awaitExample = await tBM.getPlayerInfoBy(
             "steamID", `${steam64id}`
         );
-        const message = "";
+        
         awaitExample.then((value) => {
-            const jobj = JSON.parse(value);
-            message =jobj.id;
+            const message = "Get players info by searching on identifier.";
+            interaction.reply("=".repeat(message.length));
+            interaction.reply(message);
+            interaction.reply("=".repeat(message.length));
+            interaction.reply(res);
+        }).catch(err => {
+            interaction.reply(err);
         });
 
 
