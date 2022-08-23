@@ -33,12 +33,13 @@ module.exports = {
         const awaitExample = await tBM.getPlayerInfoBy(
             "steamID", `${steam64id}`
         );
-
+        
+        const message = toString(awaitExample);
 
         const Response = new MessageEmbed()
         .setColor('BLUE')
         .setTitle('testing')
-        .setDescription(`**steam64id saved**: ${awaitExample}\n`)
+        .setDescription(`**steam64id saved**: ${message}\n`)
 
 
         interaction.reply({embeds: [Response], fetchReply: true});
