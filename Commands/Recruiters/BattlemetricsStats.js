@@ -1,5 +1,4 @@
 const { MessageEmbed, CommandInteraction } = require('discord.js');
-const Prospect = require('../../MongoDB/prospectSchema');
 require('../../Events/Client/ready');
 
 module.exports = {
