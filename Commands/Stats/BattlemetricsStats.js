@@ -29,20 +29,14 @@ module.exports = {
     async execute(interaction) {
         const { options } = interaction;
         const target = options.getMember("steam id");
-        tBM.getPlayerInfoBy("steamID", target).then((res) => {
-            const message = "Get players info by searching on identifier.";
-            console.log("=".repeat(message.length));
-            console.log(message);
-            console.log("=".repeat(message.length));
-            console.log(res);
-        }).catch(err => {
-            console.log(err);
-        });
+        const awaitExample = await tBM.getPlayerInfoBy(
+            "steamID", target.toString()
+        );
         const Response = new MessageEmbed();
         Response.setColor('GREEN');
-        Response.setDescription(`${message}`);
+        Response.setDescription(`${awaitExample}`);
         await interaction.reply({embeds: [Response], fetchReply: true });
-        interaction.channel.send(`(${res})`);
+        interaction.channel.send(`Player info by steam id`);
     }
 };
 
