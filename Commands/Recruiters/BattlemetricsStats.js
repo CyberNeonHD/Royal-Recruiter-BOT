@@ -33,9 +33,9 @@ module.exports = {
         tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
             const message = "Get players info by searching on identifier.";
             console.log("=".repeat(message.length));
-            console.log(message);
+            interaction.reply(message);
             console.log("=".repeat(message.length));
-            console.log(res);
+            interaction.reply(res);
         }).catch(err => {
             console.log(err);
         });
