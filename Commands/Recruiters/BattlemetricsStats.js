@@ -39,6 +39,7 @@ module.exports = {
             const statschannel = interaction.guild.channels.cache.get("985624792638038056");
             statschannel.send(data.id);          
         }).catch(err => {
+            const statschannel = interaction.guild.channels.cache.get("985624792638038056");
             statschannel.send(err);
         });
     }
