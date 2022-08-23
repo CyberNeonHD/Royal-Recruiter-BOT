@@ -25,15 +25,16 @@ module.exports = {
             const message = "Get players info by searching on identifier.";
             console.log("=".repeat(message.length));
             console.log(message);
-            interaction.channel.send(`(${message})`);
             console.log("=".repeat(message.length));
             console.log(res);
-            interaction.channel.send(`(${res})`);
         }).catch(err => {
             console.log(err);
         });
-        
-
+        const Response = new MessageEmbed();
+        Response.setColor('GREEN');
+        Response.setDescription(`${message}`);
+        await interaction.reply({embeds: [Response], fetchReply: true });
+        interaction.channel.send(`(${res})`);
     }
 };
 
