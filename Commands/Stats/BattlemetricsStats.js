@@ -32,7 +32,7 @@ module.exports = {
         const { options } = interaction;
         const target = options.getString("steam id");
         const awaitExample = await tBM.getPlayerInfoBy(
-            "steamID", target.toString()
+            "steamID", target
         );
         const Response = new MessageEmbed();
         Response.setColor('GREEN');
