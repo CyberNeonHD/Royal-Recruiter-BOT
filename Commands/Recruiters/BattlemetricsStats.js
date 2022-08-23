@@ -29,7 +29,9 @@ module.exports = {
     async execute(interaction) {
         const { options } = interaction;
         const steam64id = options.getString('steam64id');
-        tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
+        const awaitreply = await tBM.getPlayerInfoBy("steamID", `${steam64id}`);
+        
+        awaitreply.then((res) => {
             const statschannel = interaction.guild.channels.cache.get("985624792638038056");
             statschannel.send(res+"\n");          
         }).catch(err => {
