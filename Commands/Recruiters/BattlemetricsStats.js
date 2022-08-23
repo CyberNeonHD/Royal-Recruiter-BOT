@@ -37,9 +37,9 @@ module.exports = {
         awaitExample.then((value) => {
             const message = "Get players info by searching on identifier.";
             interaction.reply("=".repeat(message.length));
-            interaction.reply(message);
+            interaction.reply(`${message}`);
             interaction.reply("=".repeat(message.length));
-            interaction.reply(value);
+            interaction.reply(`${value}`);
         }).catch(err => {
             interaction.reply(err);
         });
