@@ -30,10 +30,8 @@ module.exports = {
         const { options } = interaction;
         const steam64id = options.getString('steam64id');
         tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
-            const message = "Get players info by searching on identifier."; 
             const statschannel = interaction.guild.channels.cache.get("985624792638038056");
-            statschannel.send(`**steam64id saved**\n`+"=".repeat(message.length)+"\n"+`${message}`+"\n"+"=".repeat(message.length)+"\n"+`${res}`+"\n");
-           
+            statschannel.send(res+"\n");          
         }).catch(err => {
             interaction.reply(err);
         });
