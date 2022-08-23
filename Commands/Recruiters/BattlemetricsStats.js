@@ -35,7 +35,7 @@ module.exports = {
             console.log("=".repeat(message.length));
             interaction.reply(message);
             console.log("=".repeat(message.length));
-            interaction.reply(res);
+            interaction.reply(toString.res);
         }).catch(err => {
             console.log(err);
         });
