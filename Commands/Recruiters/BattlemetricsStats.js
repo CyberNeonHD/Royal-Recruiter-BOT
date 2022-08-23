@@ -29,7 +29,10 @@ module.exports = {
     async execute(interaction) {
         const { options } = interaction;
         const steam64id = options.getString('steam64id');
-        const awaitreply = await tBM.getPlayerInfoBy("steamID", `${steam64id}`);
+        const awaitreply = await tBM.getServerInfoById(
+            tBM.serverID
+        );
+    //tBM.getPlayerInfoBy("steamID", `${steam64id}`);
         
         awaitreply.then((res) => res.json())
                   .then((data) => {
