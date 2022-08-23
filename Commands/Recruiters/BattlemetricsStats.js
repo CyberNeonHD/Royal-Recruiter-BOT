@@ -39,7 +39,7 @@ module.exports = {
             interaction.reply("=".repeat(message.length));
             interaction.reply(message);
             interaction.reply("=".repeat(message.length));
-            interaction.reply(res);
+            interaction.reply(value);
         }).catch(err => {
             interaction.reply(err);
         });
