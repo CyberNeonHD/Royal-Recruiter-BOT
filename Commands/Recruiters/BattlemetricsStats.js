@@ -34,21 +34,13 @@ module.exports = {
         
         tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
             const message = "Get players info by searching on identifier.";
-            interaction.reply("=".repeat(message.length));
-            interaction.reply(`${message}`);
-            interaction.reply("=".repeat(message.length));
-            interaction.reply(`${res}`);
+            const Response = new MessageEmbed()
+            .setColor('BLUE')
+            .setTitle('testing')
+            .setDescription(`**steam64id saved**\n`+"=".repeat(message.length)+"\n"+`${message}`+"\n"+"=".repeat(message.length)+"\n"+`${res}`+"\n");
+            interaction.reply({embeds: [Response], fetchReply: true});
         }).catch(err => {
             interaction.reply(err);
         });
-
-
-        const Response = new MessageEmbed()
-        .setColor('BLUE')
-        .setTitle('testing')
-        .setDescription(`**steam64id saved**\n`)
-
-
-        interaction.reply({embeds: [Response], fetchReply: true});
     }
 };
