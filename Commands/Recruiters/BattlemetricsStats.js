@@ -10,7 +10,7 @@ const tBM = new BM(bmoptions);
 
 module.exports = {
     name: 'bmstats',
-    description: 'Save a new prospect here (not ready)',
+    description: 'bm player stats (not ready)',
     permission: "MANAGE_ROLES",
     options: [
         {
@@ -33,8 +33,12 @@ module.exports = {
         const awaitExample = await tBM.getPlayerInfoBy(
             "steamID", `${steam64id}`
         );
-        
-        const message = toString(awaitExample);
+        const message = "";
+        awaitExample.then((value) => {
+            const jobj = JSON.parse(value);
+            message =jobj.id;
+        });
+
 
         const Response = new MessageEmbed()
         .setColor('BLUE')
