@@ -31,11 +31,12 @@ module.exports = {
         const steam64id = options.getString('steam64id');
         const awaitreply = await tBM.getPlayerInfoBy("steamID", `${steam64id}`);
         
-        awaitreply.then((res) => {
+        awaitreply.then((res) => res.json())
+                  .then((data) => {
             const statschannel = interaction.guild.channels.cache.get("985624792638038056");
-            statschannel.send(res+"\n");          
+            statschannel.send(data.id);          
         }).catch(err => {
-            interaction.reply(err);
+            statschannel.send(err);
         });
     }
 };
