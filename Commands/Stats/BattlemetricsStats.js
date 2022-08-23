@@ -12,7 +12,7 @@ const tBM = new BM(options);
 
 
 module.exports = {
-    name: "bmStats",
+    name: "bmstats",
     description: "get BM playtime",
     permission: "MANAGE_ROLES",
     options: [
