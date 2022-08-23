@@ -4,7 +4,7 @@ const BM = require('../@leventhan/battlemetrics')
 
 
 module.exports = {
-    name: "BMStats",
+    name: "bmStats",
     description: "get BM playtime",
     permission: "MANAGE_ROLES",
     options: [
@@ -25,8 +25,10 @@ module.exports = {
             const message = "Get players info by searching on identifier.";
             console.log("=".repeat(message.length));
             console.log(message);
+            interaction.channel.send(`(${message})`);
             console.log("=".repeat(message.length));
             console.log(res);
+            interaction.channel.send(`(${res})`);
         }).catch(err => {
             console.log(err);
         });
