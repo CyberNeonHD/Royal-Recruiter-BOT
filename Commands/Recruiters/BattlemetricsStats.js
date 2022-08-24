@@ -57,9 +57,8 @@ module.exports = {
        await tBM.getPlayerInfoBy("steamID", `${steam64id}`).then((res) => {
             console.log(res.data[0].relationships.player.data.id);
             const startDate = new Date();
-            startDate.setDate(startDate.getDate());
+            startDate.setDate( startDate.getDate() - history);
             startDate.setHours(0,0,0,0);
-            startDate.setDate( startDate - history);
             const endDate = new Date();
             tBM.getPlayTimeHistory(res.data[0].relationships.player.data.id, tBM.serverID, startDate, endDate).then((res) => {
                 while(count < history){
