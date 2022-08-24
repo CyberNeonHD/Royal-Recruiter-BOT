@@ -45,7 +45,7 @@ module.exports = async (DiscordBot) => {
     DiscordBot.on('ready', async () => {
         const mainGuild = await DiscordBot.guilds.cache.get("458272992892420108");
         const SecondGuild = await DiscordBot.guilds.cache.get("949717261210505266");
-        
+
         if(mainGuild!== undefined){
             mainGuild.commands.set(CommandsArray);
         }
