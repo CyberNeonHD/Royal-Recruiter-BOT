@@ -32,7 +32,7 @@ module.exports = {
             const Response = new MessageEmbed()
             .setColor('RED')
             .setTitle(`**ERROR CRASH PREVENTED**`)
-            .setDescription(`Did you insert a link??`);c
+            .setDescription(`Did you insert a link??`);
             interaction.reply({embeds: [Response], fetchReply: true});
         });
         await liveIcon.updateOne({
