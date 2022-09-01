@@ -72,7 +72,7 @@ module.exports = {
                 Response.setColor('GREEN');
                 Response.setTitle('player hours');
                 Response.setThumbnail('https://i.imgur.com/0zHd6L9.png');
-                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate}: ${sum}`)
+                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate}: ${Math.round(sum, 2)}`)
         
                 interaction.reply({embeds: [Response], fetchReply: true});
             }).catch(err => {
