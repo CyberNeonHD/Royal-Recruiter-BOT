@@ -70,9 +70,9 @@ module.exports = {
                 console.log(sum);
                 const Response = new MessageEmbed();
                 Response.setColor('GREEN');
-                Response.setTitle('player hours');
-                Response.setThumbnail('https://i.imgur.com/0zHd6L9.png');
-                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDay()}/${startDate.getMonth()}/${startDate.getFullYear()}: ${Math.round(2, sum)}`)
+                Response.setTitle('Player hours');
+                Response.setImage('https://i.imgur.com/0zHd6L9.png');
+                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDay()}/${startDate.getMonth()}/${startDate.getFullYear()}: ${parseFloat(sum).toFixed(2)} hours`);
         
                 interaction.reply({embeds: [Response], fetchReply: true});
             }).catch(err => {
