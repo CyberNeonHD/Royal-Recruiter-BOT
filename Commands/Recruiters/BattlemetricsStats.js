@@ -75,7 +75,7 @@ module.exports = {
                 Response.setColor('GREEN');
                 Response.setTitle('Player hours');
                 Response.setImage('https://i.imgur.com/0zHd6L9.png');
-                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDay()}/${startDate.getMonth()}/${startDate.getFullYear()}: ${hours} hours and ${mins} mins DEBUG!!! : ${startDate}`);
+                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDate()}/${startDate.getMonth()+1}/${startDate.getFullYear()}: ${hours} hours and ${mins} mins`);
         
                 interaction.reply({embeds: [Response], fetchReply: true});
             }).catch(err => {
