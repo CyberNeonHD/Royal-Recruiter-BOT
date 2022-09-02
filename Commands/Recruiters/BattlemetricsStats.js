@@ -68,14 +68,14 @@ module.exports = {
                 console.log(sum);
                 sum = sum/60/60;
                 console.log(sum);
-                hours = sum.toString().split('.')[0];
-                mins = parseFloat(sum).toFixed(2)-hours; //change to sum-sum[0] bit more efficient
-                mins = parseFloat(mins*60).toFixed(0);
+                //hours = sum.toString().split('.')[0];
+                //mins = parseFloat(sum).toFixed(2)-hours; //change to sum-sum[0] bit more efficient
+                //mins = parseFloat(mins*60).toFixed(0);
                 const Response = new MessageEmbed();
                 Response.setColor('GREEN');
                 Response.setTitle('Player hours');
                 Response.setImage('https://i.imgur.com/0zHd6L9.png');
-                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDay()}/${startDate.getMonth()}/${startDate.getFullYear()}: ${hours} hours and ${mins} mins`);
+                Response.setDescription(`SteamID:${steam64id}\nHours since ${startDate.getDay()}/${startDate.getMonth()}/${startDate.getFullYear()}: ${sum} hours`);
         
                 interaction.reply({embeds: [Response], fetchReply: true});
             }).catch(err => {
