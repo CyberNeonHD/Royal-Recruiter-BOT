@@ -20,6 +20,7 @@ module.exports = {
         const { options } = interaction;
         const role        = interaction.guild.roles.cache.get("528574587747958794");
         const oldRole     = interaction.guild.roles.cache.get("706053335106715650");
+        const MembersInfoChannel = interaction.guild.channels.cache.get('985632771135373322');
         const target      = options.getMember("user");
         const embed       = new MessageEmbed()
                             .setColor(`#${interaction.guild.roles.cache.get(role.id).color.toString(16)}`)
@@ -41,6 +42,7 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
+            createMemberThread(MembersInfoChannel,target);
             //again all on 1 line due to spacing issues when message is posted in Discord.
             embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.\n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
@@ -68,4 +70,14 @@ Please make sure to vote by clicking the reactions, and leave a message in the t
 ❤️ Welcome to the family ${target}! ❤️
 `);
 
+}
+
+async function createMemberThread(MembersInfo, nameOfTarget){
+
+    await MembersInfo.threads.create({
+        name: `${nameOfTarget}`,
+        autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
+        reason: 'New member thread',
+    });
+    
 }
