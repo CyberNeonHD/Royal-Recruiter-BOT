@@ -42,7 +42,7 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
-            createMemberThread(MembersInfoChannel,target);
+            createMemberThread(MembersInfoChannel,target.displayName);
             //again all on 1 line due to spacing issues when message is posted in Discord.
             embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.\n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
