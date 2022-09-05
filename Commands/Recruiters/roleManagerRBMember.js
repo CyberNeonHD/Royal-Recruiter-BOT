@@ -73,7 +73,7 @@ Please make sure to vote by clicking the reactions, and leave a message in the t
 }
 
 async function createMemberThread(MembersInfo,target){
-    member = target.displayName
+    member = target.displayName.substring(4, target.displayName.length)
     await MembersInfo.threads.create({
         name: `${member}`,
         autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
