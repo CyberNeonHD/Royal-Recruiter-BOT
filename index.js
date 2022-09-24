@@ -6,7 +6,7 @@ DiscordBot.commands = new Collection();
 require("./Handlers/Events")(DiscordBot);
 require("./Handlers/Commands")(DiscordBot);
 
-DiscordBot.login(process.env.DSJ_Token);
+DiscordBot.login("OTU1NzUxMTk4NjMwMjQ0Mzcy.GzNAMM.LVDfRlDiRsYz2pt8QwDcVcZ7WEkepEFDathv5U");
 
 const seed = require('./MongoDB/seedSchema');
 const live = require('./MongoDB/liveSchema');
