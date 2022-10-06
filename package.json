@@ -1,16 +1,19 @@
 {
-  "name": "nodejs",
+  "dependencies": {
+    "@leventhan/battlemetrics": "^1.5.7",
+    "ascii-table": "^0.0.9",
+    "discord.js": "^13.8.1",
+    "glob": "^7.2.0",
+    "mongoose": "^6.2.8"
+  },
+  "name": "royal-recruiter-code",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "CyberNeon",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6"
-  }
+  "description": "A bot for Royal Battalion"
 }
