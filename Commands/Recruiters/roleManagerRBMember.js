@@ -74,10 +74,13 @@ Please make sure to vote by clicking the reactions, and leave a message in the t
 
 async function createMemberThread(MembersInfo,target){
     member = target.displayName.substring(4, target.displayName.length)
-    await MembersInfo.threads.create({
+    const roleWLOf = interaction.guild.roles.cache.get("917911950120333323");
+    thread = await MembersInfo.threads.create({
         name: `${member}`,
         autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
         reason: 'New member thread',
     });
+    message = `${member} please upgrade this new member to members WL`;
+    await thread.send(message);
     
 }
