@@ -11,7 +11,6 @@ const tBM = new BM(bmoptions);
 module.exports = {
     name: 'bmstats',
     description: 'Takes steamID and returns players hours on server',
-    permission: "MANAGE_ROLES",
     options: [
         {
             name: 'steam64id',
