@@ -8,8 +8,8 @@ require("./Handlers/Commands")(DiscordBot);
 
 DiscordBot.login("OTU1NzUxMTk4NjMwMjQ0Mzcy.GzNAMM.LVDfRlDiRsYz2pt8QwDcVcZ7WEkepEFDathv5U");
 
-const seed = require('./MongoDB/seedSchema');
-const live = require('./MongoDB/liveSchema');
+const seed = require('./MongoDB/seedSchema.js');
+const live = require('./MongoDB/liveSchema.js');
 DiscordBot.on('messageCreate', async (messageCreate) => {
     if(!messageCreate.content.startsWith(PREFIX)|| messageCreate.author.bot) {
         return;

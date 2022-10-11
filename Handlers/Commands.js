@@ -37,7 +37,7 @@ module.exports = async (DiscordBot) => {
         DiscordBot.commands.set(command.name, command);
         CommandsArray.push(command);
 
-        await Table.addRow(command.name, "✅ Succes");
+        await Table.addRow(command.name, "✅ Success");
 
     });
     console.log(Table.toString());
