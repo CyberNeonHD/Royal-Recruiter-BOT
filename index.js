@@ -8,8 +8,10 @@ require("./Handlers/Commands")(DiscordBot);
 
 DiscordBot.login("OTU1NzUxMTk4NjMwMjQ0Mzcy.GzNAMM.LVDfRlDiRsYz2pt8QwDcVcZ7WEkepEFDathv5U");
 
-const seed = require('./MongoDB/seedSchema.js');
-const live = require('./MongoDB/liveSchema.js');
+//crashes the bot atm need a fix or to cron reboot bot before adding it back in.
+/*
+const seed = require('./MongoDB/seedSchema');
+const live = require('./MongoDB/liveSchema');
 DiscordBot.on('messageCreate', async (messageCreate) => {
     if(!messageCreate.content.startsWith(PREFIX)|| messageCreate.author.bot) {
         return;
@@ -25,4 +27,4 @@ DiscordBot.on('messageCreate', async (messageCreate) => {
         messageCreate.guild.setIcon(linkLive[0].live);
     }
 
-});
+});/*
