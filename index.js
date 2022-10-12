@@ -27,4 +27,4 @@ DiscordBot.on('messageCreate', async (messageCreate) => {
         messageCreate.guild.setIcon(linkLive[0].live);
     }
 
-});/*
+});*/
