@@ -42,7 +42,7 @@ module.exports = {
 
             const channelProspects = interaction.guild.channels.cache.get("460898033794809856");
             sendWelcomeMessageProspect(channelProspects, interaction, target);
-            createMemberThread(MembersInfoChannel,target);
+            createMemberThread(MembersInfoChannel,target,interaction);
             //again all on 1 line due to spacing issues when message is posted in Discord.
             embed.setDescription(`RB Member welcome message is posted in ${channelProspects}.\n${role} added to ${target}.\n${oldRole} role removed from ${target}.\nGave ${target} fancy RB tags.`);
         }
@@ -72,7 +72,7 @@ Please make sure to vote by clicking the reactions, and leave a message in the t
 
 }
 
-async function createMemberThread(MembersInfo,target){
+async function createMemberThread(MembersInfo,target,interaction){
     member = target.displayName.substring(4, target.displayName.length)
     const roleWLOf = interaction.guild.roles.cache.get("917911950120333323");
     thread = await MembersInfo.threads.create({
@@ -80,7 +80,7 @@ async function createMemberThread(MembersInfo,target){
         autoArchiveDuration: 10080, //10080 is 7 days -> https://discord.js.org/#/docs/main/stable/typedef/ThreadAutoArchiveDuration
         reason: 'New member thread',
     });
-    message = `${member} please upgrade this new member to members WL`;
+    message = `${roleWLOf} please upgrade this new member to members WL`;
     await thread.send(message);
     
 }
