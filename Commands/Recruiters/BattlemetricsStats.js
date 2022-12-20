@@ -2,9 +2,9 @@ const { MessageEmbed, CommandInteraction } = require('discord.js');
 require('../../Events/Client/ready');
 const BM = require('@leventhan/battlemetrics');
 const bmoptions = {
-    token: process.env.TOKEN || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImU5NTMxY2Y5YWI0ZmE5MGEiLCJpYXQiOjE2NjYxOTAzNDMsIm5iZiI6MTY2NjE5MDM0MywiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo1NDg1MTgifQ.8MW9uiy8zv3z2HU03FKEFpRL7WJ6kbdbwMXurmt8Mns', // after v1.4.8 don't add Bearer!
-    serverID: process.env.SERVER_ID || '4750113',
-    game: process.env.GAME || 'squad'
+    token: process.env.TOKEN // after v1.4.8 don't add Bearer!
+    serverID: process.env.SERVER_ID 
+    game: process.env.GAME
 };
 const tBM = new BM(bmoptions);
 
